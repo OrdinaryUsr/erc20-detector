@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.entities.signatures import FunctionSignature, EventSignature
+from src.entities.signatures import FunctionSignature, EventSignature, ErrorSignature
 
 
 class IContract(ABC):
@@ -13,7 +13,7 @@ class IContract(ABC):
         pass
 
     @abstractmethod
-    def check_error(self) -> bool:
+    def check_error(self, signature: ErrorSignature) -> bool:
         pass
 
     @property

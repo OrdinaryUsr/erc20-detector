@@ -2,6 +2,12 @@ from dataclasses import dataclass
 
 
 @dataclass
+class ErrorSignature:
+    name: str
+    parameters: list[str]
+
+
+@dataclass
 class EventSignature:
     name: str
     parameters: list[str]
