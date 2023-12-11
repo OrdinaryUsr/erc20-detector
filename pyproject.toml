@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "pixelplex-test"
+version = "0.1.0"
+description = ""
+authors = ["David <david1821dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.10"
+slither-analyzer = "^0.10.0"
+semver = "^3.0.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+pylint = "^3.0.2"
+pyright = "^1.1.339"
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+pre-commit = "^3.5.0"
+
+[tool.pylint."messages control"]
+disable = [
+    "raw-checker-failed",
+    "bad-inline-option",
+    "locally-disabled",
+    "file-ignored",
+    "suppressed-message",
+    "useless-suppression",
+    "deprecated-pragma",
+    "use-symbolic-message-instead",
+    "use-implicit-booleaness-not-comparison-to-string",
+    "use-implicit-booleaness-not-comparison-to-zero",
+    "missing-module-docstring",
+    "missing-function-docstring",
+    "missing-class-docstring"
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
