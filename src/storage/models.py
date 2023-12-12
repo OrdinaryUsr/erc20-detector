@@ -2,7 +2,7 @@ from sqlalchemy import Column, Boolean, CHAR
 from sqlalchemy.orm import declarative_base, Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import ENUM as PgEnum
 
-from src.statuses import ContractStatusEnum
+from src.status import ContractStatusEnum
 
 
 Base = declarative_base()
