@@ -39,7 +39,7 @@ class SlitherContractWrapper(IContract):
     def check_function(self, signature: FunctionSignature) -> bool:
         signature_string = f'{signature.name}({",".join(signature.parameters)})'
         function = self._contract.get_function_from_signature(signature_string)
-        if not function or function.view != signature.view:
+        if not function:
             return False
         if not self._check_function_return_type(function, signature):
             return False

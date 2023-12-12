@@ -17,7 +17,7 @@ ZEPPELIN_ERC20_ERRORS = [
     ErrorSignature("ERC20InvalidSpender", ["address"]),
 ]
 ZEPPELIN_ERC20_FUNCTIONS = ERC20_EXTENDED_FUNCTIONS + [
-    # FunctionSignature("constructor", ["name_", "symbol_"], None, False, []),
+    FunctionSignature("constructor", ["string", "string"], None, False, []),
     FunctionSignature(
         "_transfer",
         ["address", "address", "uint256"],
