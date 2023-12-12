@@ -1,10 +1,10 @@
 import pytest
 
-from src.analyzers.analyzers import SlitherWrapper
-from src.detectors.detectors import SignatureDetector
+from src.core.analyzers.analyzers import SlitherWrapper
+from src.core.detectors.detectors import SignatureDetector
 from src.service import ERCService
-from src.constants.erc20 import ERC20_FUNCTIONS, ERC20_EVENTS
-from src.constants.openzeppelin_erc20 import (
+from src.core.constants.erc20 import ERC20_FUNCTIONS, ERC20_EVENTS
+from src.core.constants.openzeppelin_erc20 import (
     ZEPPELIN_ERC20_FUNCTIONS,
     ZEPPELIN_ERC20_EVENTS,
     ZEPPELIN_ERC20_ERRORS,

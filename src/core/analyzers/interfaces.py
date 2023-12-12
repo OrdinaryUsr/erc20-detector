@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.entities.signatures import FunctionSignature, EventSignature, ErrorSignature
+from src.core.signatures import FunctionSignature, EventSignature, ErrorSignature
 
 
 class IContract(ABC):

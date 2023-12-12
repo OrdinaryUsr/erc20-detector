@@ -1,4 +1,4 @@
-from src.entities.signatures import FunctionSignature, EventSignature
+from src.core.signatures import FunctionSignature, EventSignature
 
 
 ERC20_TRANSFER_EVENT = EventSignature(

@@ -1,6 +1,6 @@
-from src.detectors.interfaces import IDetector
-from src.analyzers.interfaces import IAnalyzer, IContract
-from src.entities.signatures import FunctionSignature, EventSignature, ErrorSignature
+from src.core.detectors.interfaces import IDetector
+from src.core.analyzers.interfaces import IAnalyzer, IContract
+from src.core.signatures import FunctionSignature, EventSignature, ErrorSignature
 
 
 class SignatureDetector(IDetector):

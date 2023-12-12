@@ -1,8 +1,8 @@
 from slither.core.declarations import Contract, Function
 from slither.slithir.operations import EventCall
 
-from src.analyzers.interfaces import IContract
-from src.entities.signatures import FunctionSignature, EventSignature, ErrorSignature
+from src.core.analyzers.interfaces import IContract
+from src.core.signatures import FunctionSignature, EventSignature, ErrorSignature
 
 
 class SlitherContractWrapper(IContract):

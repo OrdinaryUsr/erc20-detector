@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.analyzers.interfaces import IAnalyzer
+from src.core.analyzers.interfaces import IAnalyzer
 
 
 class IDetector(ABC):

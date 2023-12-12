@@ -1,10 +1,13 @@
 from slither import Slither
 from semver import Version
 
-from src.analyzers.interfaces import IAnalyzer, IContract
-from src.analyzers.contracts import SlitherContractWrapper
-from src.analyzers.exceptions import InvalidSolidityVersion, CompilerFileDoesNotExist
-from src.file_utils import create_solidity_file
+from src.core.analyzers.interfaces import IAnalyzer, IContract
+from src.core.analyzers.contracts import SlitherContractWrapper
+from src.core.analyzers.exceptions import (
+    InvalidSolidityVersion,
+    CompilerFileDoesNotExist,
+)
+from src.core.file_utils import create_solidity_file
 
 
 class SlitherWrapper(IAnalyzer):

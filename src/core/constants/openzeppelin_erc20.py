@@ -1,5 +1,5 @@
-from src.entities.signatures import FunctionSignature, ErrorSignature
-from src.constants.erc20 import (
+from src.core.signatures import FunctionSignature, ErrorSignature
+from src.core.constants.erc20 import (
     ERC20_EVENTS,
     ERC20_EXTENDED_FUNCTIONS,
     ERC20_TRANSFER_EVENT,
