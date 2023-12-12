@@ -4,6 +4,9 @@
 # Solidity compilers
 solc/
 
+# Database dev data
+db-data/*
+
 ### Python template
 # Byte-compiled / optimized / DLL static
 __pycache__/
@@ -12,7 +15,6 @@ __pycache__/
 
 # C extensions
 *.so
-db-data/*
 # Distribution / packaging
 .Python
 build/

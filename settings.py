@@ -1,2 +1,10 @@
-# TODO: pick from env vars
-SOLC_PATH = "solc/"
+from decouple import config
+
+SOLC_PATH = config("SOLC_PATH", default="solc/")
+
+POSTGRES_HOST = config("POSTGRES_HOST")
+POSTGRES_PORT = config("POSTGRES_PORT", cast=int)
+POSTGRES_DB = config("POSTGRES_DB")
+POSTGRES_USER = config("POSTGRES_USER")
+POSTGRES_PASSWORD = config("POSTGRES_PASSWORD")
+POSTGRES_CONNECTION = f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
