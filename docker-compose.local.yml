@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14.3-alpine
+    container_name: postgres_contracts
+    restart: on-failure
+    env_file: .env
+    volumes:
+      - ./db-data/pgdata:/var/lib/postgresql/data:delegated
+    networks:
+      - internal
+    ports:
+      - "5432:5432"
+
+networks:
+  internal:
+    driver: bridge
