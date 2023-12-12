@@ -1,3 +1,5 @@
+from typing import Type
+
 from src.core.analyzers.interfaces import IAnalyzer
 from src.core.detectors.interfaces import IDetector
 from src.storage.config import Session
@@ -8,8 +10,8 @@ from src.status import ContractStatusEnum
 class ERCService:
     def __init__(
         self,
-        repository_cls: type(ContractRepository),
-        analyzer_cls: type(IAnalyzer),
+        repository_cls: Type[ContractRepository],
+        analyzer_cls: Type[IAnalyzer],
         zeppelinv5_erc_detector: IDetector,
         zeppelinv4_erc_detector: IDetector,
         zeppelinv3_erc_detector: IDetector,
