@@ -7,6 +7,8 @@ from solc_select.solc_select import (
 )
 
 from settings import SOLC_PATH
+from src.storage.config import engine
+from src.storage.models import Base
 
 
 def install_solc():
@@ -23,5 +25,11 @@ def install_solc():
         copy(global_path, local_path)
 
 
+def init_schema():
+    Base.metadata.drop_all(engine)
+    Base.metadata.create_all(engine)
+
+
 if __name__ == "__main__":
     install_solc()
+    init_schema()
