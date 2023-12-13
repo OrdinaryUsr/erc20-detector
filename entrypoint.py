@@ -20,6 +20,7 @@ from src.core.constants.openzeppelinv2_erc20 import (
 )
 from src.storage.repository import ContractRepository
 from src.app import Application
+from src.storage.config import Session
 
 
 def main() -> None:
@@ -35,8 +36,9 @@ def main() -> None:
     zeppelinv2_erc20_detector = SignatureDetector(
         ZEPPELIN_V2_ERC20_FUNCTIONS, ZEPPELIN_V2_ERC20_EVENTS, []
     )
+    repository = ContractRepository(Session)
     service = ERCService(
-        ContractRepository,
+        repository,
         SlitherWrapper,
         zeppelinv5_erc20_detector,
         zeppelinv4_erc20_detector,
