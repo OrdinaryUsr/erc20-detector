@@ -1,11 +1,13 @@
 from slither import Slither
+from slither.slither import SlitherError
 from semver import Version
 
+from settings import SOLC_PATH
 from src.core.analyzers.interfaces import IAnalyzer, IContract
 from src.core.analyzers.contracts import SlitherContractWrapper
 from src.core.analyzers.exceptions import (
     InvalidSolidityVersion,
-    CompilerFileDoesNotExist,
+    CompilationError,
 )
 from src.core.file_utils import create_solidity_file
 
@@ -15,12 +17,13 @@ class SlitherWrapper(IAnalyzer):
         self._source_code = source_code
         self._version = self._parse_version()
         with create_solidity_file(self._source_code) as source_file:
-            # TODO: use SOLC_PATH var
-            self._slither = Slither(source_file.name, solc="solc/solc-" + self._version)
+            path = f"{SOLC_PATH}solc-{self._version}"
+            try:
+                self._slither = Slither(source_file.name, solc=path)
+            except SlitherError as e:
+                raise CompilationError(path) from e
 
     def _parse_version(self) -> str:
-        # TODO: create parser class
-        # TODO: cover more cases
         version_lines = filter(
             lambda line: line.strip(" ").startswith("pragma solidity"),
             self._source_code.split("\n"),

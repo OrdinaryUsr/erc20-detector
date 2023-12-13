@@ -5,8 +5,8 @@ class InvalidSolidityVersion(Exception):
         super().__init__()
 
 
-class CompilerFileDoesNotExist(Exception):
+class CompilationError(Exception):
     def __init__(self, file_path: str) -> None:
         self.file_path = file_path
-        self.message = f'No such compiler "{file_path}"'
+        self.message = f'Compiler error "{file_path}"'
         super().__init__()

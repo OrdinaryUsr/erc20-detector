@@ -25,3 +25,8 @@ class ContractModel(Base):
         nullable=False,
         default=ContractStatusEnum.WAITING,
     )
+
+    def mark_as_failed(self) -> None:
+        self.is_erc20 = False
+        self.erc20_version = None
+        self.status = ContractStatusEnum.FAILED
